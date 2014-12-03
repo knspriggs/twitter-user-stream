@@ -114,7 +114,7 @@ func (u *UStreamClient) ReadStream(resp *http.Response) chan *Tweet {
 			line, err := reader.ReadBytes('\n')
 
 			if err != nil {
-				log.Printf("Error reading line of response\n")
+				log.Printf("Error reading line of response: %s\n", err)
 			}
 
 			line = bytes.TrimSpace(line)
